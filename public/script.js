@@ -1,4 +1,3 @@
-// Gets the cars from the server
 const getCars = async () => {
   try {
     const response = await fetch("api/cars/");
@@ -9,7 +8,6 @@ const getCars = async () => {
   }
 };
 
-// Shows the car names in the list of cars box
 const showCars = async () => {
   document.getElementById("cars").innerHTML = "";
   let cars = await getCars();
@@ -35,7 +33,6 @@ const showCars = async () => {
   });
 };
 
-// Displays the Car details in the Details box
 displayDetails = (car) => {
   document.getElementById("details").innerHTML = "";
   const section = document.createElement("section");
@@ -106,7 +103,6 @@ displayDetails = (car) => {
   };
 };
 
-// Adds a car to the server via the form
 const addCar = async (e) => {
   e.preventDefault();
   let response;
@@ -145,7 +141,7 @@ const addCar = async (e) => {
     }, 3000);
     return;
   }
-  // Waits until the car has been added to the server before it is shown
+
   response = await response.json();
 
   if (form._id.value == -1) {
@@ -159,7 +155,6 @@ const addCar = async (e) => {
   }
 
   if (form._id.value != -1) {
-    //displayDetails(response);
     result.innerHTML = "Car updated successfully";
     result.style.color = "green";
     const car = await getCar(form._id.value);
@@ -171,8 +166,6 @@ const addCar = async (e) => {
   }
 };
 
-// Ran into issue with updating after editing...found fix on
-// Portia's github
 const getCar = async (id) => {
   let response = await fetch(`/api/cars/${id}`);
   if (response.status != 200) {
@@ -190,7 +183,6 @@ const populateForm = (car) => {
   form.year.value = car.year;
   form.type.value = car.type;
   form.color.value = car.color;
-  // Handle the different number of features
   populateFeatures(car.features);
 };
 
@@ -205,7 +197,6 @@ const populateFeatures = (features) => {
   });
 };
 
-//Delete Confirmation
 const deleteConfirmation = (car) => {
   const panel = document.getElementById("delete-confirmation");
   panel.innerHTML = "";
@@ -244,7 +235,6 @@ const deleteConfirmation = (car) => {
   };
 };
 
-// Delete the car
 const deleteCar = async (car) => {
   let response = await fetch(`/api/cars/${car._id}`, {
     method: "DELETE",
@@ -263,7 +253,6 @@ const deleteCar = async (car) => {
   document.getElementById("add-car-form")._id.value = -1;
 };
 
-// shows and hides the ADD form
 const showForm = () => {
   const form = document.getElementById("add-car-form");
   form._id.value = -1;
@@ -284,7 +273,6 @@ const hideForm = () => {
   form.reset();
 };
 
-// Changes title of add form to edit
 const showEditForm = () => {
   const formTitle = document.getElementById("form-title");
   formTitle.innerHTML = "Edit A Car";

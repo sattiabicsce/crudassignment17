@@ -1,5 +1,3 @@
-// Used class file to determine what packages were needed
-// and how to use them within the file
 const express = require("express");
 const app = express();
 const joi = require("joi");
