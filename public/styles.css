@@ -1,8 +1,9 @@
 :root {
-  --background: brown;
-  --columns: bisque;
-  --cars: blueviolet;
+  --background: #4d4d4d;
+  --columns: #b8b8b8;
+  --cars: #ff7f50; /* Coral color */
 }
+
 body,
 html {
   margin: 0;
@@ -34,6 +35,9 @@ button {
 .column {
   margin: 20px;
   background-color: var(--columns);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .column:not(#cars section):not(#details section) {
@@ -50,18 +54,19 @@ button {
   background-color: var(--cars);
   padding: 30px;
   text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
+  border-radius: 10px;
 }
 
 #cars section:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
 #addCar {
   background-color: var(--cars);
   border: 2px solid white;
-  border-radius: 2px;
+  border-radius: 5px;
   width: 250px;
   max-width: 100%;
   padding: 10px;
@@ -74,47 +79,12 @@ button {
   border: 3px solid white;
   width: 200px;
   height: 40px;
+  border-radius: 5px;
 }
 
 #addCar:hover {
   background: var(--columns);
   color: black;
-}
-
-#form {
-  width: 50%;
-  height: 25%;
-  background: white;
-}
-
-.hide {
-  display: none;
-}
-
-.fade-in {
-  animation: fadeIn ease 0.5s;
-}
-
-.fade-out {
-  animation: fadeOut ease 0.5s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacar: 0;
-  }
-  100% {
-    opacar: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacar: 1;
-  }
-  100% {
-    opacar: 0;
-  }
 }
 
 #add-car-form,
@@ -123,25 +93,27 @@ button {
   border: 3px solid white;
   width: 50%;
   margin: 10px auto;
-  border-radius: 3px;
+  border-radius: 10px;
   text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
+  padding: 20px;
 }
 
 #delete-confirmation {
-  padding: 10px;
+  padding: 20px;
 }
 
 #delete-confirmation button {
   margin: 10px;
+  border-radius: 5px;
 }
 
 #add-car-form p {
   padding: 10px;
-  margin: 5px;
+  margin: 10px;
 }
 
 #add-car-form label {
@@ -152,6 +124,7 @@ button {
 #add-car-form input {
   width: 300px;
   height: 30px;
+  border-radius: 5px;
 }
 
 #add-car-form input,
@@ -173,6 +146,8 @@ button {
   margin-right: 10px;
   margin-top: 5px;
   cursor: pointer;
+  color: white;
+  font-size: 1.5em;
 }
 
 #exit-button:hover {
@@ -188,18 +163,24 @@ button {
 #result {
   text-align: center;
   font-size: 1.4em;
+  color: white;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
 }
 
 #title {
-  font-size: 2.5em;
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 h1 {
   text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 #cars section a {
@@ -211,6 +192,7 @@ h1 {
 #details section h2 {
   text-align: center;
   font-size: 1.8em;
+  color: #fff;
 }
 
 .icon {

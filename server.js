@@ -117,8 +117,6 @@ const validateCar = (car) => {
     type: joi.string().min(4).required(),
     features: joi.string().min(4).required(),
     color: joi.string().required(),
-    // Found out that sense it is passed in as an object,
-    // you dive in further to it to ensure it has a filename
     img: joi.object({
       filename: joi.string().required(),
     }),
