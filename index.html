@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment 17 - Server CRUD With MongoDB</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Cars Around the World</h1>
+    <div class="flex-container">
+      <div class="column flex-container" id="cars"></div>
+      <div class="column" id="details"></div>
+    </div>
+    <button id="addCar">Add A Car</button>
+    <div id="car-form">
+      <form id="add-car-form" method="POST" class="hide fade-out">
+        <h2 id="exit-button">&times;</h2>
+        <h1 id="form-title">Add a Car:</h1>
+        <input type="hidden" name="_id" value="-1" />
+        <p>
+          <label for="carName">Car Name: </label>
+          <input
+            type="text"
+            id="carName"
+            name="name"
+            minlength="4"
+            placeholder="New York Car"
+            required
+          />
+        </p>
+        <p>
+          <label for="country">Country: </label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            minlength="2"
+            placeholder="United States"
+            required
+          />
+        </p>
+        <p>
+          <label for="population">Population: </label>
+          <input
+            type="number"
+            id="population"
+            name="population"
+            min="1"
+            placeholder="12345"
+            required
+          />
+        </p>
+        <p>
+          <label for="prominentLanguage">Prominent Language: </label>
+          <input
+            type="text"
+            id="prominentLanguage"
+            name="prominentLanguage"
+            minlength="4"
+            placeholder="English"
+            required
+          />
+        </p>
+        <p>
+          <label for="landmarks">Landmarks (separate list by commas): </label>
+          <input
+            type="text"
+            id="landmarks"
+            name="landmarks"
+            minlength="4"
+            placeholder="Statue of Liberty,Central Park"
+            required
+          />
+        </p>
+        <p>
+          <label for="funFact">Fun Fact: </label>
+          <input
+            type="text"
+            id="funFact"
+            name="funFact"
+            placeholder="Fun Fact"
+            required
+          />
+        </p>
+        <p>
+          <label for="img">Image:</label>
+          <input type="file" name="img" />
+        </p>
+        <p>
+          <button id="form-submit-button" type="submit">Submit!</button>
+        </p>
+        <p id="result"></p>
+      </form>
+    </div>
+    <div class="hide fade-out" id="delete-confirmation"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

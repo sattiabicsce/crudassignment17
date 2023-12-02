@@ -1,0 +1,270 @@
+:root {
+  --background: brown;
+  --columns: bisque;
+  --cars: blueviolet;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+body {
+  background: var(--background);
+  text-align: center;
+}
+
+#cars img {
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 80%;
+}
+
+#details img {
+  padding: 10px;
+  max-width: 80%;
+  max-height: 20%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.column {
+  margin: 20px;
+  background-color: var(--columns);
+}
+
+.column:not(#cars section):not(#details section) {
+  box-shadow: 8px 10px var(--cars);
+}
+
+#cars,
+#details {
+  padding: 5px;
+  min-height: 400px;
+}
+
+#cars section {
+  background-color: var(--cars);
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+#cars section:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+}
+
+#addCar {
+  background-color: var(--cars);
+  border: 2px solid white;
+  border-radius: 2px;
+  width: 250px;
+  max-width: 100%;
+  padding: 10px;
+  margin: 5px;
+}
+
+#form-submit-button,
+#delete-confirmation button {
+  background-color: var(--cars);
+  border: 3px solid white;
+  width: 200px;
+  height: 40px;
+}
+
+#addCar:hover {
+  background: var(--columns);
+  color: black;
+}
+
+#form {
+  width: 50%;
+  height: 25%;
+  background: white;
+}
+
+.hide {
+  display: none;
+}
+
+.fade-in {
+  animation: fadeIn ease 0.5s;
+}
+
+.fade-out {
+  animation: fadeOut ease 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacar: 0;
+  }
+  100% {
+    opacar: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacar: 1;
+  }
+  100% {
+    opacar: 0;
+  }
+}
+
+#add-car-form,
+#delete-confirmation {
+  background-color: var(--cars);
+  border: 3px solid white;
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 3px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+#delete-confirmation {
+  padding: 10px;
+}
+
+#delete-confirmation button {
+  margin: 10px;
+}
+
+#add-car-form p {
+  padding: 10px;
+  margin: 5px;
+}
+
+#add-car-form label {
+  display: inline-block;
+  width: 225px;
+}
+
+#add-car-form input {
+  width: 300px;
+  height: 30px;
+}
+
+#add-car-form input,
+#add-car-form label {
+  max-width: 100%;
+}
+
+#add-car-form h1 {
+  padding: 10px;
+}
+
+#cars a {
+  cursor: pointer;
+}
+
+#exit-button {
+  display: inline;
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#exit-button:hover {
+  color: var(--background);
+}
+
+#form-submit-button:hover,
+#delete-confirmation button:hover {
+  background: var(--background);
+  color: black;
+}
+
+#result {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+  font-size: 2.5em;
+}
+
+h1 {
+  text-align: center;
+}
+
+#cars section a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+#details section h2 {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.icon {
+  padding: 5px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+#details section p {
+  font-size: 1.5em;
+}
+
+#addCar {
+  font-size: large;
+  color: white;
+}
+
+#add-car-form {
+  color: white;
+}
+
+#add-car-form label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#form-submit-button,
+#delete-confirmation button {
+  font-size: large;
+  color: white;
+}
+
+#delete-confirmation {
+  color: white;
+}
+
+input::placeholder {
+  color: rgb(202, 202, 202);
+}
+
+@media only screen and (min-width: 600px) {
+  .flex-container {
+    display: flex;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  #cars section {
+    flex: 20%;
+  }
+
+  #cars {
+    flex-wrap: wrap;
+  }
+}
